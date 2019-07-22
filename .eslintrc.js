@@ -16,7 +16,7 @@ module.exports = {
         SharedArrayBuffer: 'readonly',
     },
     rules: {
-        // 'brace-style': ['error', 'stroustrup'],
+        'brace-style': ['error', 'stroustrup'],
         // 'camelcase': 0,
         // 'default-case': 0,
         'indent': ['error',
