@@ -1,23 +1,24 @@
 {
-  "name": "p5js-runway-music-faces",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "reload -b -v",
-    "build": "mkdir -p ./build & cp ./*.html ./build & cp ./*.js ./build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/atorov/p5js-runway-music-faces.git"
-  },
-  "author": "atorov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/atorov/p5js-runway-music-faces/issues"
-  },
-  "homepage": "https://github.com/atorov/p5js-runway-music-faces#readme",
-  "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-google": "^0.13.0",
-    "reload": "^3.0.1"
-  }
+    "name": "p5js-runway-music-faces",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "reload -b -v",
+        "build": "mkdir -p ./build & cp ./*.html ./build & cp ./*.js ./build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/atorov/p5js-runway-music-faces.git"
+    },
+    "author": "atorov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/atorov/p5js-runway-music-faces/issues"
+    },
+    "homepage": "https://github.com/atorov/p5js-runway-music-faces#readme",
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.2.0",
+        "eslint-plugin-import": "^2.18.2",
+        "reload": "^3.0.1"
+    }
 }
