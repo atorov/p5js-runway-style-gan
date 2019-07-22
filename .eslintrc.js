@@ -16,6 +16,8 @@ module.exports = {
   },
   'rules': {
     'new-cap': 0,
+    'object-curly-spacing': 0,
+    'require-jsdoc': 0,
   },
   'globals': {
     p5: true,
