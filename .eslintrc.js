@@ -24,7 +24,7 @@ module.exports = {
             { 'SwitchCase': 1 }
         ],
         // 'new-cap': 0,
-        // 'max-len': 0,
+        'max-len': 0,
         'new-cap': 0,
         // 'no-bitwise': 0,
         'no-console': 0,
