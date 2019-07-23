@@ -1,5 +1,5 @@
 {
-    "name": "p5js-runway-music-faces",
+    "name": "p5js-runway-style-gan",
     "version": "1.0.0",
     "scripts": {
         "start": "reload -b -v",
@@ -7,14 +7,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/atorov/p5js-runway-music-faces.git"
+        "url": "git+https://github.com/atorov/p5js-runway-style-gan.git"
     },
     "author": "atorov",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/atorov/p5js-runway-music-faces/issues"
+        "url": "https://github.com/atorov/p5js-runway-style-gan/issues"
     },
-    "homepage": "https://github.com/atorov/p5js-runway-music-faces#readme",
+    "homepage": "https://github.com/atorov/p5js-runway-style-gan#readme",
     "devDependencies": {
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.2.0",
