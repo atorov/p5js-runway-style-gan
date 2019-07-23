@@ -1,9 +1,19 @@
 const p5Main = new p5((sketch) => {
     const s = sketch
 
+    const CANVAS_HEIGHT = 512
+    const CANVAS_WIDTH = 512
     const FRAME_COUNT_OFFSET = 0
-    // const FRAME_FILE_COUNT_PREFIX = 9000000
-    // const FRAME_FILE_NAME_PREFIX = 'gan'
+    const FRAME_FILE_COUNT_PREFIX = 1000000
+    const FRAME_FILE_NAME_PREFIX = 'gan'
+    const NOISE_SEED = 117
+    const T_MAX = 1.1
+    const T_MIN = -1.1
+    const T_NOISE_SCALE = 0.011
+    const Z_LENGTH_MAX = 512
+    const Z_NOISE_SCALE = 0.012
+    const Z_MAX = 1
+    const Z_MIN = -1
 
     const isLoopEnabled = true
 
@@ -19,19 +29,19 @@ const p5Main = new p5((sketch) => {
     }
 
     s.setup = () => {
-        s.createCanvas(512, 512)
-        s.noiseSeed(118)
+        s.createCanvas(CANVAS_HEIGHT, CANVAS_WIDTH)
+        s.noiseSeed(NOISE_SEED)
     }
 
     s.draw = async () => {
         s.noLoop()
 
-        const truncation = s.map(s.noise((s.frameCount + FRAME_COUNT_OFFSET) * 0.011), 0, 1, -1.1, 1.1)
+        const t = s.map(s.noise((s.frameCount + FRAME_COUNT_OFFSET) * T_NOISE_SCALE), 0, 1, T_MIN, T_MAX)
         const z = []
-        for (let i = 0; i < 512; i++) {
-            z.push(s.map(s.noise(1550 * i + (s.frameCount + FRAME_COUNT_OFFSET) * 0.012), 0, 1, -1, 1))
+        for (let i = 0; i < Z_LENGTH_MAX; i++) {
+            z.push(s.map(s.noise(1550 * i + (s.frameCount + FRAME_COUNT_OFFSET) * Z_NOISE_SCALE), 0, 1, Z_MIN, Z_MAX))
         }
-        const inputs = { z, truncation }
+        const inputs = { z, t }
         console.log(`::: [${s.frameCount + FRAME_COUNT_OFFSET}] inputs:`, inputs)
 
         let response = null
@@ -58,11 +68,11 @@ const p5Main = new p5((sketch) => {
                 ganImageElement.hide()
                 s.image(ganImageElement, 0, 0, s.width, s.height)
 
-                // s.saveCanvas(`${FRAME_FILE_NAME_PREFIX}-${FRAME_FILE_COUNT_PREFIX + FRAME_COUNT_OFFSET + s.frameCount}`, 'jpg')
+                s.saveCanvas(`${FRAME_FILE_NAME_PREFIX}-${FRAME_FILE_COUNT_PREFIX + FRAME_COUNT_OFFSET + s.frameCount}`, 'jpg')
             }
         }
 
-        await delay(350)
+        await delay(550)
         if (isLoopEnabled) {
             s.loop()
         }
