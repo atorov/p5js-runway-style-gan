@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "start": "reload -b -v",
-        "build": "mkdir -p ./build & cp ./*.html ./build & cp ./*.js ./build"
+        "build": "mkdir -p ./build & cp ./*.html ./build/ & cp ./*.js ./build/ & cp ./*.gif ./build/"
     },
     "repository": {
         "type": "git",
